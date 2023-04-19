@@ -1,4 +1,4 @@
-Description
+# Description
 
 This is a personal project that uses the Riot API to retrieve information about the popular MOBA game, League of Legends. The main feature of the application is to display various statistics of a player's in-game performance such as their win rate, KDA ratio, and most played champions.
 
