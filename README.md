@@ -15,11 +15,11 @@ This project offers opportunities to learn about several key concepts and techno
 
    * Using an external API to retrieve data
    * Managing API keys and environment variables
-    Building a responsive front-end with React and React Router
-    Using Node.js to create a server and make requests to an API
-    Parsing JSON data and rendering it dynamically in the front-end
-    Handling errors and edge cases when making API requests
-    Implementing search functionality to query an API
+   * Building a responsive front-end with React and React Router
+   * Using Node.js to create a server and make requests to an API
+   * Parsing JSON data and rendering it dynamically in the front-end
+   * Handling errors and edge cases when making API requests
+   * Implementing search functionality to query an API
 
 ## Installation
 
