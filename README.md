@@ -13,8 +13,8 @@ This is a personal project that uses the Riot API to retrieve information about 
 
 This project offers opportunities to learn about several key concepts and technologies including:
 
-   1. Using an external API to retrieve data
-   2. Managing API keys and environment variables
+   * Using an external API to retrieve data
+   * Managing API keys and environment variables
     Building a responsive front-end with React and React Router
     Using Node.js to create a server and make requests to an API
     Parsing JSON data and rendering it dynamically in the front-end
