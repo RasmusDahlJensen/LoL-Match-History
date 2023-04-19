@@ -2,12 +2,12 @@
 
 This is a personal project that uses the Riot API to retrieve information about the popular MOBA game, League of Legends. The main feature of the application is to display various statistics of a player's in-game performance such as their win rate, KDA ratio, and most played champions.
 
-    Search for a summoner's profile by their in-game username
-    Display the summoner's rank, win rate, KDA ratio, and most played champions
-    Display the win rate, KDA ratio, and game count of each champion
-    Display the items most frequently built on each champion
-    Display the summoner spells most frequently used by the summoner
-    Display the summoner's match history, including champion played, KDA ratio, and game outcome
+   * Search for a summoner's profile by their in-game username
+   * Display the summoner's rank, win rate, KDA ratio, and most played champions
+   * Display the win rate, KDA ratio, and game count of each champion
+   * Display the items most frequently built on each champion
+   * Display the summoner spells most frequently used by the summoner
+   * Display the summoner's match history, including champion played, KDA ratio, and game outcome
 
 ## Learning Opportunities
 
