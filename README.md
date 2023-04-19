@@ -9,7 +9,7 @@ This is a personal project that uses the Riot API to retrieve information about 
     Display the summoner spells most frequently used by the summoner
     Display the summoner's match history, including champion played, KDA ratio, and game outcome
 
-Learning Opportunities
+## Learning Opportunities
 
 This project offers opportunities to learn about several key concepts and technologies including:
 
@@ -21,14 +21,14 @@ This project offers opportunities to learn about several key concepts and techno
     Handling errors and edge cases when making API requests
     Implementing search functionality to query an API
 
-Installation
+## Installation
 
     Clone the repository
     Run npm install to install dependencies
     Create a .env file in the root directory and set your Riot API key as RIOT_API_KEY
     Run npm start to start the development server
 
-Usage
+## Usage
 
     Enter a summoner's in-game username in the search bar
     Press the search button or hit enter to retrieve the summoner's statistics
