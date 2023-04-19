@@ -1,10 +1,15 @@
-import { useState } from "react";
 import "./App.css";
+import { Routes } from "react-router-dom";
+import { AppRouter } from "./Routing/AppRouter";
+
+const apiKey = import.meta.env.VITE_API_KEY;
 
 function App() {
-	const [count, setCount] = useState(0);
-
-	return <div className="App">test hey what's going on</div>;
+	return (
+		<>
+			<AppRouter />
+		</>
+	);
 }
 
 export default App;
