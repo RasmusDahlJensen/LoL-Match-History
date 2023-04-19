@@ -13,8 +13,8 @@ This is a personal project that uses the Riot API to retrieve information about 
 
 This project offers opportunities to learn about several key concepts and technologies including:
 
-    Using an external API to retrieve data
-    Managing API keys and environment variables
+    *Using an external API to retrieve data
+    *Managing API keys and environment variables
     Building a responsive front-end with React and React Router
     Using Node.js to create a server and make requests to an API
     Parsing JSON data and rendering it dynamically in the front-end
@@ -36,6 +36,6 @@ This project offers opportunities to learn about several key concepts and techno
     Navigate to the different tabs to view more detailed information about the summoner and their champions
     To search for another summoner, simply enter their username in the search bar and repeat steps 2-4
 
-Credits
+## Credits
 
 This project was built using the Riot API provided by Riot Games. The front-end was built with React. Dotenv was used to securely store the Riot API key.
