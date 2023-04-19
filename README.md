@@ -41,7 +41,4 @@ Usage
 
 Credits
 
-This project was built using the Riot API provided by Riot Games. The front-end was built with React and React Router, and the back-end was built with Node.js. Dotenv was used to securely store the Riot API key.
-License
-
-This project is licensed under the MIT License.
+This project was built using the Riot API provided by Riot Games. The front-end was built with React. Dotenv was used to securely store the Riot API key.
