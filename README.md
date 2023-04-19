@@ -2,9 +2,6 @@ Description
 
 This is a personal project that uses the Riot API to retrieve information about the popular MOBA game, League of Legends. The main feature of the application is to display various statistics of a player's in-game performance such as their win rate, KDA ratio, and most played champions.
 
-The project is built using React and React Router on the front-end, and Node.js on the back-end to make requests to the Riot API. The project also utilizes dotenv to securely store the Riot API key as an environment variable.
-Features
-
     Search for a summoner's profile by their in-game username
     Display the summoner's rank, win rate, KDA ratio, and most played champions
     Display the win rate, KDA ratio, and game count of each champion
