@@ -6,8 +6,6 @@ The front-end was built with React. Dotenv was used to securely store the Riot A
    * Search for a summoner's profile by their in-game username
    * Display the summoner's rank, win rate, KDA ratio, and most played champions
    * Display the win rate, KDA ratio, and game count of each champion
-   * Display the items most frequently built on each champion
-   * Display the summoner spells most frequently used by the summoner
    * Display the summoner's match history, including champion played, KDA ratio, and game outcome
 
 ## Learning Opportunities
