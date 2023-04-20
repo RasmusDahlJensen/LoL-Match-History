@@ -1,0 +1,24 @@
+$base-color: #74b3ce;
+$accent-blue: #508991;
+$dark-blue: #172a3a;
+$green: #004346;
+$mint: #09bc8a;
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	font-family: "Roboto Mono", monospace;
+}
+
+p,
+a,
+label,
+input::placeholder {
+	font-family: "Roboto", sans-serif;
+}
