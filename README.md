@@ -25,7 +25,7 @@ This project offers opportunities to learn about several key concepts and techno
 
    1. Clone the repository
    2. Run npm install to install dependencies
-   3. Create a .env file in the root directory and set your Riot API key as RIOT_API_KEY
+   3. Create a .env file in the root directory and set your Riot API key as VITE_API_KEY
    4. Run npm start dev to start the development server
 
 ## Usage
