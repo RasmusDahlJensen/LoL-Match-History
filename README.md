@@ -40,5 +40,5 @@ This project offered opportunities to learn about several key concepts and techn
 
 This project was built using the Riot API provided by Riot Games. 
 
-API Will likely have expired, so there's going to be no API functionality unless you apply your own as shown in the installation section
+API key will likely have expired, so there's going to be no API functionality unless you apply your own as shown in the installation section
 https://lolmatchhistory.netlify.app/
