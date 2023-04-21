@@ -3,68 +3,59 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Home.scss";
 
-// Get the API key from the environment variables
-const apiKey = import.meta.env.VITE_API_KEY;
-
 export const Home = () => {
-	// Use the react-router-dom hook to navigate between pages
-	const navigate = useNavigate();
-
-	// Function to handle the form submission
-	const buttonFunc = (e) => {
-		e.preventDefault();
-		console.log(e.target.form.summoner.value);
-		const summonerName = e.target.form.summoner.value;
-		// Navigate to the summoner page with the provided summoner name
-		navigate(`/summoner/${summonerName}`);
-	};
-
-	// Set up state variables for the champion IDs and data
+	const navigate = useNavigate(); // Initialize necessary variables
+	const apiKey = import.meta.env.VITE_API_KEY; // Get the API key from the environment variable
+	// Initialize the state variables
 	const [championId, setChampionId] = useState([]);
 	const [championData, setChampionData] = useState([]);
 	const [filteredChampions, setFilteredChampions] = useState([]);
 
-	// API calls for the champion IDs and data
-	const championIdCall =
-		`https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=` +
-		`${apiKey}`;
-	const championDataCall =
-		"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json";
+	// Function to handle the button click event
+	const buttonFunc = (e) => {
+		e.preventDefault(); // Prevent the default form submission
+		const summonerName = e.target.form.summoner.value; // Get the summoner name from the form input
+		navigate(`/summoner/${summonerName}`); // Navigate to the /summoner route with the provided summoner name
+	};
 
-	// Use the useEffect hook to make the API calls once the component is mounted
+	// Fetch champion rotation data from the Riot API and the champion data from Community Dragon API
 	useEffect(() => {
-		// Call API to get rotation champion IDs
+		const championIdCall = `https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${apiKey}`;
 		axios
 			.get(championIdCall)
 			.then((res) => {
-				setChampionId(res.data.freeChampionIds);
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-		// Call API to get free champion IDs
-		axios
-			.get(championDataCall)
-			.then((res) => {
-				setChampionData(res.data);
-				handleFilter();
+				setChampionId(res.data.freeChampionIds); // Set the championId state variable to the fetched data
 			})
 			.catch((err) => {
 				console.error(err);
 			});
 
-		const handleFilter = () => {
-			// Filter the champions data by IDs and set the state with the filtered data
-			if (championData && championId) {
-				const champions = championId.map((id) =>
-					championData.find((champion) => champion.id === id)
-				);
-				if (champions.length === championId.length) {
-					setFilteredChampions(champions);
-				}
-			}
-		};
+		const championDataCall =
+			"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json";
+		axios
+			.get(championDataCall)
+			.then((res) => {
+				setChampionData(res.data); // Set the championData state variable to the fetched data
+			})
+			.catch((err) => {
+				console.error(err);
+			});
 	}, []);
+
+	// Filter the champion data to only include the free champions
+	useEffect(() => {
+		// Ensure both data sets are loaded
+		if (championData && championId) {
+			const champions = championId.map((id) =>
+				championData.find((champion) => champion.id === id)
+			);
+			
+			// Ensure all free champions are included
+			if (champions.length === championId.length) {
+				setFilteredChampions(champions); // Set the filteredChampions state variable to the filtered data
+			}
+		}
+	}, [championData, championId]);
 
 	return (
 		<>
