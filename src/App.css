@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+}
+
+input::-moz-placeholder {
+  font-family: "Roboto", sans-serif;
+}
+
+p,
+a,
+label,
+input::placeholder {
+  font-family: "Roboto", sans-serif;
+}/*# sourceMappingURL=App.css.map */

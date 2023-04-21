@@ -22,6 +22,7 @@ export const Home = () => {
 	// Set up state variables for the champion IDs and data
 	const [championId, setChampionId] = useState([]);
 	const [championData, setChampionData] = useState([]);
+	const [filteredChampions, setFilteredChampions] = useState([]);
 
 	// API calls for the champion IDs and data
 	const championIdCall =
@@ -32,6 +33,7 @@ export const Home = () => {
 
 	// Use the useEffect hook to make the API calls once the component is mounted
 	useEffect(() => {
+		// Call API to get rotation champion IDs
 		axios
 			.get(championIdCall)
 			.then((res) => {
@@ -40,24 +42,29 @@ export const Home = () => {
 			.catch((err) => {
 				console.error(err);
 			});
-
+		// Call API to get free champion IDs
 		axios
 			.get(championDataCall)
 			.then((res) => {
 				setChampionData(res.data);
+				handleFilter();
 			})
 			.catch((err) => {
 				console.error(err);
 			});
-	}, []);
 
-	// Once the champion IDs and data have been fetched, filter the champions based on their IDs
-	if (championData && championId) {
-		const filteredChampions = championId.map((id) =>
-			championData.find((champion) => champion.id === id)
-		);
-		console.log(filteredChampions);
-	}
+		const handleFilter = () => {
+			// Filter the champions data by IDs and set the state with the filtered data
+			if (championData && championId) {
+				const champions = championId.map((id) =>
+					championData.find((champion) => champion.id === id)
+				);
+				if (champions.length === championId.length) {
+					setFilteredChampions(champions);
+				}
+			}
+		};
+	}, []);
 
 	return (
 		<>
@@ -78,6 +85,15 @@ export const Home = () => {
 
 			<div>
 				<h3>Free champion rotation</h3>
+				{filteredChampions.length === championId.length ? (
+					<div>
+						{filteredChampions.map((champion) => (
+							<p key={champion.id}>{champion.name}</p>
+						))}
+					</div>
+				) : (
+					<div>Loading...</div>
+				)}
 			</div>
 		</>
 	);
