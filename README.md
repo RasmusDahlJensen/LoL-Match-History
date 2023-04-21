@@ -12,7 +12,7 @@ The front-end was built with React. Dotenv was used to securely store the Riot A
 
 ## Learning Opportunities
 
-This project offers opportunities to learn about several key concepts and technologies including:
+This project offered opportunities to learn about several key concepts and technologies including:
 
    * Using an external API to retrieve data
    * Managing API keys and environment variables
