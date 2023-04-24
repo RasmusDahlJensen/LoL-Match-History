@@ -71,7 +71,9 @@ export const Home = () => {
 
 			<div>
 				<h3>Free champion rotation</h3>
-				{filteredChampions && filteredChampions.length === championId.length ? (
+				{filteredChampions &&
+				isLoading === false &&
+				filteredChampions.length === championId.length ? (
 					<div>
 						{filteredChampions.map((champion) => (
 							<p key={champion.id}>{champion.name}</p>
