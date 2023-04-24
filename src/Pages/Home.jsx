@@ -49,7 +49,7 @@ export const Home = () => {
 			const champions = championId.map((id) =>
 				championData.find((champion) => champion.id === id)
 			);
-			
+
 			// Ensure all free champions are included
 			if (champions.length === championId.length) {
 				setFilteredChampions(champions); // Set the filteredChampions state variable to the filtered data
@@ -76,7 +76,7 @@ export const Home = () => {
 
 			<div>
 				<h3>Free champion rotation</h3>
-				{filteredChampions.length === championId.length ? (
+				{filteredChampions && filteredChampions.length === championId.length ? (
 					<div>
 						{filteredChampions.map((champion) => (
 							<p key={champion.id}>{champion.name}</p>
