@@ -10,6 +10,7 @@ export const Home = () => {
 	const [championId, setChampionId] = useState([]);
 	const [championData, setChampionData] = useState([]);
 	const [filteredChampions, setFilteredChampions] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 
 	// Function to handle the button click event
 	const buttonFunc = (e) => {
@@ -21,21 +22,15 @@ export const Home = () => {
 	// Fetch champion rotation data from the Riot API and the champion data from Community Dragon API
 	useEffect(() => {
 		const championIdCall = `https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${apiKey}`;
-		axios
-			.get(championIdCall)
-			.then((res) => {
-				setChampionId(res.data.freeChampionIds); // Set the championId state variable to the fetched data
-			})
-			.catch((err) => {
-				console.error(err);
-			});
-
 		const championDataCall =
 			"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json";
-		axios
-			.get(championDataCall)
-			.then((res) => {
-				setChampionData(res.data); // Set the championData state variable to the fetched data
+
+		// Use Promise.all to wait for both API calls to complete before updating state
+		Promise.all([axios.get(championIdCall), axios.get(championDataCall)])
+			.then(([championIdRes, championDataRes]) => {
+				setChampionId(championIdRes.data.freeChampionIds);
+				setChampionData(championDataRes.data);
+				setIsLoading(false); // Set loading state to false when both API calls have completed
 			})
 			.catch((err) => {
 				console.error(err);
