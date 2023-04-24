@@ -40,7 +40,7 @@ export const Home = () => {
 	// Filter the champion data to only include the free champions
 	useEffect(() => {
 		// Ensure both data sets are loaded
-		if (championData && championId && isLoading === true) {
+		if (championData && championId && isLoading === false) {
 			const champions = championId.map((id) =>
 				championData.find((champion) => champion.id === id)
 			);
